@@ -1,21 +1,21 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 
-# Create your views here.
+# # Create your views here.
 
-def homeView(request):
-    template = 'mainapp/home.html'
-    context = {}
+# def homeView(request):
+#     template = 'mainapp/home.html'
+#     context = {}
 
-    return render(request, template_name=template,context=context)
+#     return render(request, template_name=template,context=context)
 
-def aboutView(request):
-    template ='mainapp/about.html'
-    context = {}
+# def aboutView(request):
+#     template ='mainapp/about.html'
+#     context = {}
 
-    return render(request, template_name=template,context=context)
+#     return render(request, template_name=template,context=context)
 
-def contectView(request):
-    template = 'mainapp/contect.html'
-    context={}
+# def contectView(request):
+#     template = 'mainapp/contect.html'
+#     context={}
 
-    return render(request, template_name=template,context=context)
+#     return render(request, template_name=template,context=context)
