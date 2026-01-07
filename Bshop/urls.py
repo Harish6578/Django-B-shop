@@ -1,5 +1,5 @@
 """
-URL configuration for Bshop project.
+URL configuration for Eshop project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -24,3 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('mainapp.urls'))
 ]
+
+if settings.DEBUG == True:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
