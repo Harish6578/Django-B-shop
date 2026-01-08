@@ -24,7 +24,7 @@ def aboutView(request):
     return render(request, template_name=template,context= context)
 
 def contactView(request):
-    template = 'mainapp/contact.html'
+    template = 'mainapp/contect.html'
     context={
         'current_page' : 'Contact'
     }
