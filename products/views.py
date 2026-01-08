@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Product
 
 # Create your views here.
-def productView(request):
+def productsView(request):
     template = 'products/products.html'
     context ={
         'current_page' : 'Product',
@@ -11,3 +11,4 @@ def productView(request):
     }
 
     return render(request,template_name=template,context=context)
+
