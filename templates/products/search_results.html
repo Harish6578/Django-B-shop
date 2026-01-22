@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+
+{% block tilte %}
+Search Result For {{query}}
+{% endblock %}
+
+{% block content %}
+<h2>
+    Search Results for : <span class="text-info">{{query}}</span>
+</h2>
+
+<section>
+    {% for product in products %}
+    <div>
+        {% include 'products/includes/productsCard.html' %}
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

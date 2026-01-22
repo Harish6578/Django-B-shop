@@ -7,3 +7,5 @@ class Product(models.Model):
     price = models.PositiveIntegerField()
     stock = models.PositiveIntegerField()
     thumbnail = models.ImageField(upload_to='products/thumbnails/')
+    created_at = models.DateTimeField(auto_now_add =True)
+    updated_at = models.DateTimeField(auto_now=True)
