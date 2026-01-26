@@ -100,7 +100,7 @@
 
 /* Edit & Delete Buttons */
 .productdetails .btn-primary,
-.productdetails .btn-secondary {
+.productdetails .btn-danger {
     padding: 10px 22px;
     border-radius: 40px;
     font-size: 14px;
@@ -113,7 +113,7 @@
     transform: translateY(-2px);
 }
 
-.productdetails .btn-secondary:hover {
+.productdetails .btn-danger:hover {
     background-color: #5c636a;
     transform: translateY(-2px);
 }
