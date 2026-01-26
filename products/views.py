@@ -30,7 +30,8 @@ def searchProducts(request):
             'products':search_result
         }
     return render (request,template_name=template,context=context)
-from django.views.generic import (CreateView,DetailView,UpdateView,DeleteView)
+from django.views.generic import (CreateView,
+DetailView,UpdateView,DeleteView)
 
 
 class CreateProduct(CreateView):
@@ -38,6 +39,14 @@ class CreateProduct(CreateView):
     template_name = 'products/add_product.html'
     fields = '__all__'
     success_url = '/'
+
+
+class AddProductImage(CreateView):
+    model=Product
+    template_name='products/add_product.html'
+    fields='__all__'
+    #redirection url for successful creation of resourecs
+    success_url='/'
 
 class ProductDetail(DetailView):
     model= Product
@@ -59,3 +68,5 @@ class DeleteProduct(DeleteView):
     model=Product
     template_name='products/delete_product.html'
     success_url= '/'
+
+
