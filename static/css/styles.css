@@ -1,3 +1,4 @@
+
 .card-title {
     display: flex;
     justify-content: center;
@@ -118,9 +119,10 @@
 
 /* Carousel Images */
 .carousel-inner img {
-    height: 420px;
+    height: 620px;
     border-radius: 16px;
     object-fit: cover;
+
 }
 
 /* Carousel Controls */
@@ -158,7 +160,7 @@ a {
 
 /* Product image */
 .card-img-top {
-  height: 200px;
+  height: 500px;
   width: 100%;
   object-fit: cover;
 }
