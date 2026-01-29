@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render,redirect
+from django.urls import reverse
 from .models import Product
 
 # Create your views here.
@@ -66,7 +66,17 @@ class ProductDetail( FormMixin ,DetailView):
     def get_queryset(self):
         return Product.objects.prefetch_related('images')
     
-    def get_context_data(self, **kwargs):
+    def post(self,request,*args,**kwargs):
+        self.object=self.get_object()
+        form =self.get_form()
+
+        if form.is_valid():
+            image=form.save(commit=False)
+            image.product=self.object
+            image.save()
+            return redirect(self.get_success_url())
+    
+    def get_context_data(self,*args,**kwargs):
         context = super().get_context_data(**kwargs)
         context['abcd'] = 'yuhooo'
         
@@ -82,5 +92,23 @@ class DeleteProduct(DeleteView):
     model=Product
     template_name='products/delete_product.html'
     success_url= '/'
+
+   # Edit Product Iamge
+from .models import ProductImage
+
+class EditProductImage(UpdateView):
+    model = ProductImage
+    template_name= 'products/image_edit.html'
+    fields='__all__'
+
+    def get_success_url(self):
+        return reverse('product_details',kwargs={'pk':self.object.product.pk})
+
+class DeleteProductImage(DeleteProduct):
+    model = ProductImage
+    template_name= 'products/image_del.html'
+
+    def get_success_url(self):
+        return reverse('product_details',kwargs={'pk':self.object.product.pk})
 
 

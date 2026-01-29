@@ -14,4 +14,7 @@ urlpatterns = [
     path('<int:pk>/edit/', UpdateProduct.as_view(), name='edit_product'),
     path('<int:pk>/delete/', DeleteProduct.as_view(), name='delete_product'),
     path('<int:pk>/add/', ProductImageForm, name='add_images'),
+
+    #Product Image
+    path('image/edit/<int:pk>',EditProductImage.as_view(),name='edit_prod_image'),
 ]
