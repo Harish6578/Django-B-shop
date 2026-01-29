@@ -17,4 +17,5 @@ urlpatterns = [
 
     #Product Image
     path('image/edit/<int:pk>',EditProductImage.as_view(),name='edit_prod_image'),
+    path('image/edit/<int:pk>',DeleteProductImage.as_view(),name='edit_prod_image')
 ]
