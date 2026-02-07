@@ -48,6 +48,7 @@
     background: linear-gradient(145deg, #ffffff, #f4f6f9);
     border-radius: 16px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+   
 }
 
 /* Product Thumbnail */
@@ -90,6 +91,7 @@
     border-radius: 50px;
     font-weight: 600;
     transition: all 0.3s ease;
+    width: 300px !important;
 }
 
 .productdetails .btn-success:hover {
@@ -212,3 +214,75 @@ a {
   }
 }
 
+/* ----------------------------- */
+/* CAROUSEL ITEM */
+/* ----------------------------- */
+.carousel-item {
+    position: relative;
+}
+
+/* IMAGE */
+.carousel-item img {
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* ----------------------------- */
+/* BUTTON CONTAINER */
+/* ----------------------------- */
+.product-image-actions {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+/* BUTTON STYLE */
+.product-image-actions .btn {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.product-image-actions .btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ----------------------------- */
+/* SHOW ON HOVER (OPTIONAL) */
+/* ----------------------------- */
+.product-image-actions {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-item:hover .product-image-actions {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ----------------------------- */
+/* MOBILE RESPONSIVE */
+/* ----------------------------- */
+@media (max-width: 576px) {
+
+    .product-image-actions {
+        padding: 0 10px;
+        top: 10px;
+    }
+
+    .product-image-actions .btn {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+}
